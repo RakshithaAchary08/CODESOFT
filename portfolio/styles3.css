@@ -1,0 +1,196 @@
+:root {
+    --primary-bg-color: #2c3e50; /* Dark blue-gray */
+    --secondary-bg-color: #ecf0f1; /* Light gray */
+    --highlight-color: #3498db; /* Bright blue */
+    --text-color: #2c3e50; /* Dark blue-gray */
+    --border-color: #bdc3c7; /* Light gray */
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --font-size-base: 16px;
+    --line-height-base: 1.6;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-color);
+    background-color: #f5f5f5; /* Very light gray for the overall background */
+}
+
+header {
+    background-color: var(--primary-bg-color);
+    color: white;
+    padding: 1em 0;
+    box-shadow: 0 4px 8px var(--shadow-color); /* Adds shadow for a lifted effect */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+    position: relative; /* For positioning hover effects */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding: 0.5em 0;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--highlight-color);
+    transition: width 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--highlight-color);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+section {
+    padding: 2em;
+    margin: 0 auto;
+    max-width: 900px; /* Increased max-width for more spacious content */
+}
+
+#home {
+    background-color: var(--secondary-bg-color);
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    border-radius: 12px; /* Enhanced rounded corners */
+    margin-top: 1em;
+    transition: transform 0.3s;
+}
+
+.hero-image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+#about, #skills, #projects, #resume, #contact {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+#about:hover, #skills:hover, #projects:hover, #resume:hover, #contact:hover {
+    box-shadow: 0 6px 16px var(--shadow-color);
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.about-image, .project-image {
+    width: 100%;
+    height: auto;
+    max-width: 500px; /* Larger images for better visibility */
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    background-color: var(--secondary-bg-color);
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+ul li:hover {
+    background-color: var(--highlight-color);
+    color: white;
+    transform: scale(1.02);
+}
+
+.skill-icon {
+    width: 32px; /* Larger icons for better visibility */
+    height: 32px;
+    margin-right: 15px;
+}
+
+.project {
+    border: 1px solid var(--border-color);
+    margin-bottom: 1em;
+    padding: 1em;
+    background-color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.project:hover {
+    background-color: var(--secondary-bg-color);
+    transform: translateY(-5px);
+}
+
+footer {
+    background-color: var(--primary-bg-color);
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    box-sizing: border-box;
+    border-top: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjust based on design needs */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero-image, .about-image, .project-image {
+        max-width: 100%;
+    }
+
+    section {
+        padding: 1em;
+    }
+}
